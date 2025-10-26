@@ -1,27 +1,8 @@
 <div>
-    <button>
-        <img>
-        <span>Riki</span>
+    <button (click)="changeUser()">
+        <img [src]="userImgPath">
+        <span >{{selectedUser.name}}</span>
     </button>
 </div>
 
-<div>
-    <button>
-        <img>
-        <span>Tamar</span>
-    </button>
-</div>
 
-<div>
-    <button>
-        <img>
-        <span>Yael</span>
-    </button>
-</div>
-
-<div>
-    <button>
-        <img>
-        <span>Michal</span>
-    </button>
-</div>
