@@ -1,4 +1,10 @@
-export const USERS = [
+export interface UserData {
+    id: string; // מזהה ייחודי
+    name: string; // שם
+    avatar: string; // שם תמונה
+}
+
+export const USERS: UserData[] = [
     {
       id: 'u1',//שם
       name: 'Yael Levi',//,תמונה

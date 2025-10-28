@@ -3,9 +3,14 @@
 <main>
     <ul id="users">
         <li>
-            <app-user />
+            <app-user [name]="users[0].name" [avatar]="users[0].avatar"/>
+        </li>
+        <li>
+            <app-user [name]="users[1].name" [avatar]="users[1].avatar" />
         </li>
     </ul>
+
+    <p id="fallback">Select a user to see their tasks.</p>
 </main>
 
 
