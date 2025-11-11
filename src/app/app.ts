@@ -1,33 +1,28 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
-import { User } from './user/user';
 import { USERS } from './fake_users';
+import { User } from './user/user';
+import { Tasks } from './tasks/tasks';
+
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, User],
+  imports: [Header, User, Tasks],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-
 export class App {
+  protected readonly title = signal('firstapp');
   users = USERS;
-  protected readonly title = signal('lesson-3');
+  selectedUser?: any;
 
-  selectedUser = this.users[0];
-
-  onUserSelected(idUserClicked: string){
-    const newUser =  this.users.find((user)=>user.id == idUserClicked);
-    if(newUser)
-      this.selectedUser = newUser
+  onUserSelected(userId: string) {
+    const userClicked = this.users.find((user) => user.id === userId)
+    console.log('user Clicked from father', userClicked);
+    this.selectedUser = userClicked
   }
+
 }
-
-
-
-
-
-
-
 

@@ -1,15 +1,10 @@
-
 <div>
-    <button (click)="onUserClicked()">
+    <button [class.active]="isSelected" (click)="onUserClicked()">
+        <img [src]="user.avatar">
+        <span>{{user.name}}</span>
 
-        <img [src]="userImgPath"  alt="user image">
-
-        <span>{{name}}</span>
     </button>
+
 </div>
-
-
-
-
 
 

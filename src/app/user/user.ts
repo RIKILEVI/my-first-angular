@@ -1,37 +1,35 @@
-import { Component , Input , Output , EventEmitter} from '@angular/core';
-import { USERS} from '../fake_users';
-
+import { Component,Input, Output, EventEmitter } from '@angular/core';
+import { USERS } from '../fake_users';
+import { UserObj } from './user.model';
+ 
 
 @Component({
   selector: 'app-user',
-  imports: [],
+  standalone: true,
+  // imports: [User],
   templateUrl: './user.html',
   styleUrl: './user.css'
 })
 
 export class User {
 
-  // selectedUser= USERS[0];
-  // @Input({ required: true }) user!: UserData;
-  @Input() name: string ='';
-  @Input() avatar: string = '';
-  @Input({required: true}) id!: string;
-  
-  @Output() userclicked = new EventEmitter<string>();
+  selectedUser = USERS[0];
+  @Input({ required: true }) user!: UserObj;
+  @Input({required:true}) isSelected!: boolean;
+  @Output() userClicked = new EventEmitter<any>();
 
-  get  userImgPath(){
-    return 'assets/users/' + this.avatar;
+  onUserClicked() {
+    this.userClicked.emit(this.user.id);
   }
 
-  onUserClicked(){
-
-    this.userclicked.emit(this.id)
+  get userImgPath() {
+    return 'assets/users/' + this.selectedUser.avatar;
   }
-  
 
-
-  // onUserSelected(id: string){}
-  
+  changeUser() {
+    const randomlndex = Math.floor(Math.random() * USERS.length);
+    this.selectedUser = USERS[randomlndex];
+  }
 
 }
 

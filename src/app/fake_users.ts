@@ -1,40 +1,41 @@
-export interface UserData {
-    id: string; // מזהה ייחודי
-    name: string; // שם
-    avatar: string; // שם תמונה
-}
+// export interface UserData {
+//   id: string; // מזהה ייחודי
+//   name: string; // שם
+//   avatar: string; // שם תמונה
+// }
 
-export const USERS: UserData[] = [
-    {
-      id: 'u1',//שם
-      name: 'Yael Levi',//,תמונה
-      avatar: 'user-1.jpg',//מזהה ייחודי
-    },
-    {
-      id: 'u2',
-      name: 'Chana Cohen',
-      avatar: 'user-2.jpg',
-    },
-    {
-      id: 'u3',
-      name: 'Moshe Katz',
-      avatar: 'user-3.jpg',
-    },
-    {
-      id: 'u4',
-      name: 'David Miller',
-      avatar: 'user-4.jpg',
-    },
-    {
-      id: 'u5',
-      name: 'Rachel Adams',
-      avatar: 'user-5.jpg',
-    },
-    {
-      id: 'u6',
-      name: 'Yossi Ben-David',
-      avatar: 'user-6.jpg',
-    },
-  ];
-  
-  
+export const USERS = [
+  {
+    id: 'u1',
+    name: 'Riki Levi',
+    avatar: 'user-1.jpg',
+  },
+  {
+    id: 'u2',
+    name: 'Ayala Pridman',
+    avatar: 'user-2.jpg',
+  },
+  {
+    id: 'u3',
+    name: 'Yael Zalzman',
+    avatar: 'user-3.jpg',
+  },
+  {
+    id: 'u4',
+    name: 'Rachel Popovigh',
+    avatar: 'user-4.jpg',
+  },
+  {
+    id: 'u5',
+    name: 'Naama Ohana',
+    avatar: 'user-5.jpg',
+  },
+  {
+    id: 'u6',
+    name: 'Ayala Zohar',
+    avatar: 'user-6.jpg',
+  },
+];
+
+
+
