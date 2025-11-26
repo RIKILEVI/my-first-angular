@@ -1,0 +1,39 @@
+<div class="dialog">
+  <h2>Contact Us</h2>
+
+  <form #contactForm="ngForm" (ngSubmit)="send(contactForm)">
+
+    <!-- Name -->
+    <label>שם:</label>
+    <input type="text" name="name" [(ngModel)]="model.name" required minlength="2" maxlength="18" #name="ngModel">
+    <div class="error" *ngIf="name.invalid && name.touched">
+      <div *ngIf="name.errors?.['required']">שם הוא שדה חובה.</div>
+      <div *ngIf="name.errors?.['maxlength']">שם ארוך מדי. מקסימום 18 תווים.</div>
+    </div>
+
+    <!-- Email -->
+    <label>אימייל:</label>
+    <input type="email" name="email" [(ngModel)]="model.email" required email #email="ngModel">
+    <div class="error" *ngIf="email.invalid && email.touched">
+      <div *ngIf="email.errors?.['required']">אימייל הוא שדה חובה.</div>
+      <div *ngIf="email.errors?.['email']">פורמט אימייל לא תקין.</div>
+    </div>
+
+    <!-- Subject -->
+    <label>נושא:</label>
+    <input type="text" name="subject" [(ngModel)]="model.subject" maxlength="50" #subject="ngModel">
+    <div class="error" *ngIf="subject.errors?.['maxlength'] && subject.touched">
+      נושא עד 50 תווים לכל היותר.
+    </div>
+
+    <!-- Message -->
+    <label>הודעה:</label>
+    <textarea name="message" [(ngModel)]="model.message" #message="ngModel"></textarea>
+
+    <!-- Buttons -->
+    <div class="btns">
+      <button type="submit" [disabled]="contactForm.invalid">Send</button>
+      <button type="button" (click)="cancel(contactForm)">Cancel</button>
+    </div>
+  </form>
+</div>

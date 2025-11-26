@@ -1,53 +1,94 @@
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: 90%;
-    max-width: 50rem;
-    margin: 0 auto 2rem auto;
-    text-align: center;
-    background: linear-gradient(
-      to bottom,
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+  max-width: 50rem;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  background: linear-gradient(to bottom,
       #184d23,
-      #2e7d32
-    );
-    color: #b3d8c3;
-    padding: 1rem;
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-    box-shadow: 0 1px 8px rgba(24, 77, 35, 0.4);
+      #2e7d32);
+  color: #b3d8c3;
+  padding: 1rem;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: 0 1px 8px rgba(24, 77, 35, 0.4);
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.header-actions button {
+    background-color: #b3d8c3; 
+    color: #184d23; 
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px; 
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.2s, transform 0.1s; 
+}
+
+.header-actions button:hover {
+    background-color: #9bd0a3; 
+    transform: translateY(-1px);
+}
+
+img {
+  width: 3.5rem;
+  object-fit: contain;
+}
+
+h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  font-size: 0.8rem;
+  text-wrap: balance;
+}
+
+.overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 9; 
+}
+
+app-contact {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; 
+}
+
+
+
+@media (min-width: 768px) {
+  header {
+    padding: 2rem;
   }
-  
+
   img {
-    width: 3.5rem;
-    object-fit: contain;
+    width: 4.5rem;
   }
-  
+
   h1 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin: 0;
     padding: 0;
   }
-  
-  p {
-    margin: 0;
-    font-size: 0.8rem;
-    text-wrap: balance;
-  }
-  
-  @media (min-width: 768px) {
-    header {
-      padding: 2rem;
-    }
-  
-    img {
-      width: 4.5rem;
-    }
-  
-    h1 {
-      font-size: 1.5rem;
-      margin: 0;
-      padding: 0;
-    }
-  }
+}
