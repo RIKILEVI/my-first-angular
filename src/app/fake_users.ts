@@ -8,32 +8,32 @@ export const USERS = [
   {
     id: 'u1',
     name: 'Riki Levi',
-    avatar: 'user-1.jpg',
+    avatar: 'assets/users/Riki_Levi.png',
   },
   {
     id: 'u2',
     name: 'Ayala Pridman',
-    avatar: 'user-2.jpg',
+    avatar: 'assets/users/user-2.jpg',
   },
   {
     id: 'u3',
     name: 'Yael Zalzman',
-    avatar: 'user-3.jpg',
+    avatar: 'assets/users/Yael_Zalzman.png',
   },
   {
     id: 'u4',
     name: 'Rachel Popovigh',
-    avatar: 'user-4.jpg',
+    avatar: 'assets/users/user-4.jpg',
   },
   {
     id: 'u5',
     name: 'Naama Ohana',
-    avatar: 'user-5.jpg',
+    avatar: 'assets/users/user-5.jpg',
   },
   {
     id: 'u6',
     name: 'Ayala Zohar',
-    avatar: 'user-6.jpg',
+    avatar: 'assets/users/user-6.jpg',
   },
 ];
 

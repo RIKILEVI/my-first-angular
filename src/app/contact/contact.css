@@ -1,0 +1,98 @@
+.dialog {
+    background-color: white;
+    padding: 1.5rem 2rem; 
+    border-radius: 12px; 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); 
+    width: 90%;
+    max-width: 450px;
+}
+
+h2 {
+    text-align: center;
+    color: #184d23; /* צבע כהה ירוק */
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #2e7d32; /* קו הפרדה */
+    padding-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px; 
+    box-sizing: border-box; 
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #2e7d32; 
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+    outline: none;
+}
+
+.ng-invalid.ng-touched:not(form) {
+    border: 1px solid #d32f2f !important; 
+    background-color: #fce4ec;
+}
+
+.error-message {
+    color: #d32f2f;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.btns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.btns button {
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.send-btn {
+    background-color: #2e7d32; 
+    color: white;
+}
+.send-btn:hover:not([disabled]) {
+    background-color: #1b5e20;
+    transform: translateY(-1px);
+}
+
+.cancel-btn {
+    background-color: #f0f0f0; 
+    color: #333;
+    border: 1px solid #ccc;
+}
+.cancel-btn:hover {
+    background-color: #ddd;
+}
+.send-btn[disabled] {
+    background-color: #a5d6a7;
+    cursor: not-allowed;
+}

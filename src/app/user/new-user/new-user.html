@@ -1,0 +1,97 @@
+<div class="backdrop" (click)="onClose()">
+    <dialog open (click)="$event.stopPropagation()">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <h4>Add User</h4>
+
+            <div class="row" formGroupName="name">
+                <div>
+                    <p>
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" type="text" formControlName="firstName" />
+                        @if (firstNameControl?.touched) {
+                        @if (firstNameControl?.hasError('required')) {
+                    <p class="error-messages">First name is required.</p>
+                    } @else if (firstNameControl?.hasError('maxlength')) {
+                    <p class="error-messages">First name cannot exceed 18 characters.</p>
+                    }
+                    }
+                    </p>
+                </div>
+
+                <div>
+                    <div>
+                        <p>
+                            <label for="lastName">Last Name</label>
+                            <input id="lastName" formControlName="lastName" type="text" />
+                            @if (nameGroup.get('lastName')?.touched) {
+                            @if (nameGroup.get('lastName')?.hasError('required')) {
+                        <p class="error-messages">Last name is required.</p>
+                        } @else if (nameGroup.get('lastName')?.hasError('maxlength')) {
+                        <p class="error-messages">Last name cannot exceed 18 characters.</p>
+                        }
+                        }
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                <label for="email">Email</label>
+                <input id="email" formControlName="email" type="email" />
+                @if (emailControl?.touched) {
+                @if (emailControl?.hasError('required')) {
+            <p class="error-messages">Email is required.</p>
+            } @else if (emailControl?.hasError('email')) {
+            <p class="error-messages">Please enter a valid email address.</p>
+            }
+            }
+            </p>
+
+            <div class="row" formGroupName="passwords">
+                <p>
+                    <label for="password">Password</label>
+                    <input id="password" formControlName="password" type="password" />
+                    @if (passwordControl?.touched) {
+                    @if (passwordControl?.hasError('required')) {
+                <p class="error-messages">Password is required.</p>
+                } @else if (passwordControl?.hasError('minlength')) {
+                <p class="error-messages">Password must be at least 6 characters long.</p>
+                }
+                }
+                </p>
+                <p>
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input id="confirmPassword" formControlName="confirmPassword" type="password" />
+                    @if (form.get('passwords')?.get('confirmPassword')?.touched &&
+                    form.get('passwords')?.get('confirmPassword')?.hasError('required')) {
+                <p class="error-messages">Confirm Password is required.</p>
+                }
+                </p>
+            </div>
+
+            @if (form.get('passwords')?.hasError('mismatch') && form.get('passwords')?.touched) {
+            <p class="error-messages">Passwords must match!</p>
+            }
+
+            <div class="categories-section">
+                <label>Task Categories</label>
+                <div class="row" formArrayName="categories"> @for (categoryControl of categoriesControls.controls; track
+                    $index) {
+                    <div class="category-row">
+                        <label>
+                            <input type="checkbox" [formControlName]="$index" />
+                            {{ categories[$index] }}
+                        </label>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <p class="actions">
+                <button type="button" (click)="onClose()">Cancel</button>
+                <button type="submit" [disabled]="!form?.valid">Create</button>
+            </p>
+
+        </form>
+    </dialog>
+</div>

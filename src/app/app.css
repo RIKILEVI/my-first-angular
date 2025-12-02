@@ -23,6 +23,34 @@ main {
   text-align: center;
 }
 
+
+.actions {
+  width: 90%;
+  max-width: 50rem;
+  margin: 1rem auto 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  background-color: #2e7d32;
+  color: #b3d8c3;
+  border-radius: 4px;
+  border: none;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+button:hover,
+button:active {
+  background-color: #b3d8c3;
+  color: #184d23
+}
+
 @media (min-width: 768px) {
   main {
     margin: 4rem auto;

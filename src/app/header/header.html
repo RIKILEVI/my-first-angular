@@ -1,5 +1,16 @@
 <header>
-    <img src="assets/logo.svg" alt="Logo icon"/> 
+    <img src="assets/logo.svg" alt="Logo icon" />
     <h1>Riki's site</h1>
     <p>Welcome to Riki's task managment site!</p>
+
+    <div class="header-actions">
+        <button (click)="openContact()">Contact Us</button>
+    </div>
 </header>
+
+<app-contact *ngIf="showContact" (close)="closeContact()">
+</app-contact>
+
+<div class="overlay" *ngIf="showContact" (click)="closeContact()">
+</div>
+
